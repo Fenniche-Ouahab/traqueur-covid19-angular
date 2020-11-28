@@ -1,1 +1,144 @@
-/* You can add global styles to this file, and also import other style files */
+body,
+html {
+  height: 100%;
+  font-family: "Alegreya Sans", sans-serif;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  #header img {
+    margin: 0 auto;
+  }
+}
+
+#navigation .navbar {
+  border-bottom: 1px solid rgba(128, 0, 128, 0.082);
+  font-family: "Alegreya Sans", sans-serif;
+}
+
+#navigation .navbar a {
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+#navigation .navbar a:hover {
+  color: red;
+}
+
+#navigation .h1-title {
+  text-align: center;
+  font-size: 30px;
+  position: relative;
+
+  max-width: 30em; /* largeur de la fenêtre */
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden; /* masque tout ce qui dépasse */
+  box-shadow: 0 0.25em 0.5em #ccc, inset 0 0 1em 0.25em #ccc;
+}
+
+#header {
+  background: url("assets/images/back.jpg") center center no-repeat;
+  background-size: cover;
+  height: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+#header .text-clignote {
+  text-align: center;
+  color: blue;
+  animation-duration: 2s;
+  animation-name: clignoter;
+  animation-iteration-count: infinite;
+  transition: none;
+}
+
+#header .text-center {
+  text-align: center;
+  font-style: oblique;
+}
+
+#statistic {
+  padding: 5rem 0;
+  background-color: gray;
+}
+#statistic .card-text {
+  font-weight: bold;
+  font-size: 50px;
+  color: tomato;
+  background-color: yellow;
+}
+#statistic .card-infected {
+  border-bottom-color: lightsalmon;
+  border-bottom-width: 10px;
+}
+#statistic .card-recovered {
+  border-bottom-color: lightgreen;
+  border-bottom-width: 10px;
+}
+#statistic .card-deaths {
+  border-bottom-color: red;
+  border-bottom-width: 10px;
+}
+
+#footer {
+  padding: 2rem 0;
+  background-color: #aaaaaa;
+  color: #eeeeee;
+}
+
+#footer a {
+  color: purple;
+}
+#footer a:hover {
+  color: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+#footer .fas {
+  padding: 5px;
+}
+
+@keyframes clignoter {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#header .marquee-rtl {
+  overflow: hidden; /* important */
+  width: 50%;
+  max-width: 30em; /* A ADAPTER */
+  margin: auto;
+  border: 10px #f0f0ff;
+  box-shadow: 0 0.25em 0.5em #ccc, inset 0 0 1em 0.25em #ccc;
+}
+#header .marquee-rtl > div {
+  display: inline-block; /* important */
+  white-space: nowrap; /* important */
+  animation: defilement-rtl 30s infinite linear; /* défilement */
+  cursor: pointer;
+  padding: 10px 2em 10px 100%;
+  font-size: 1em;
+}
+#header .marquee-rtl:hover > div {
+  animation-play-state: paused; /* met en pause le défilement */
+}
+
+@keyframes defilement-rtl {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  100% {
+    -webkit-transform: translate(-100%);
+    transform: translate(-100%);
+  }
+}
